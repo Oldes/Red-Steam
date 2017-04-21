@@ -444,3 +444,8 @@ Red/System [
 	k_EUniverseMax
 ]
 
+#enum EMatchMakingServerResponse! [
+	eServerResponded:  0
+	eServerFailedToRespond
+	eNoServersListedOnMasterServer ;for the Internet query type, returned in response callback if no servers of this type match
+]

@@ -16,6 +16,10 @@ Red/System [
 #define ISteamApps!               int-ptr!
 #define ISteamNetworking!         int-ptr!
 #define ISteamMatchmakingServers! int-ptr!
+#define ISteamMatchmakingPingResponse!       int-ptr!
+#define ISteamMatchmakingPlayersResponse!    int-ptr!
+#define ISteamMatchmakingRulesResponse!      int-ptr!
+#define ISteamMatchmakingServerListResponse! int-ptr!
 #define ISteamRemoteStorage!      int-ptr!
 #define ISteamScreenshots!        int-ptr!
 #define ISteamHTTP!               int-ptr!
@@ -28,8 +32,13 @@ Red/System [
 #define ISteamHTMLSurface!        int-ptr!
 #define ISteamInventory!          int-ptr!
 #define ISteamVideo!              int-ptr!
+#define ISteamGameServer!         int-ptr!
+#define ISteamGameServerStats!    int-ptr!
+#define ISteamGameServerItem!     int-ptr!
 
 int64!:  alias struct! [lo [integer!] hi [integer!]] ;@@ must be changed once we will get real integer64! type
+uin16!:  alias struct! [lo [byte!] hi [byte!]]       ;@@ must be changed once we will get real integer16! type
+
 #define uint64! int64!
 uint64-ref!: alias struct! [value [uint64!]]
 int64-ref!:  alias struct! [value [int64!]]
@@ -107,27 +116,35 @@ LeaderboardEntry!: alias struct! [
 ]
 
 unless SteamAPI_Init [
-	"Steam init failed!"
+	print-line "Steam init failed!"
 	quit 1
 ]
 print-line ["Steam running: " SteamAPI_IsSteamRunning]
 
 
-#include %Steam-client.reds
-#include %Steam-user.reds
-#include %Steam-friends.reds
-#include %Steam-utils.reds
-#include %Steam-matchmaking.reds
-#include %Steam-matchmaking-servers.reds
-#include %Steam-remote-storage.reds
-#include %Steam-user-stats.reds
-#include %Steam-apps.reds
-#include %Steam-networking.reds
-#include %Steam-screenshots.reds
-#include %Steam-music.reds
-#include %Steam-music-remote.reds
-#include %Steam-http.reds
-
+#include %Steam-Client.reds
+#include %Steam-User.reds
+#include %Steam-Friends.reds
+#include %Steam-Utils.reds
+#include %Steam-Matchmaking.reds
+#include %Steam-MatchmakingServers.reds
+#include %Steam-RemoteStorage.reds
+#include %Steam-UserStats.reds
+#include %Steam-Apps.reds
+#include %Steam-Networking.reds
+#include %Steam-Screenshots.reds
+#include %Steam-Music.reds
+#include %Steam-MusicRemote.reds
+#include %Steam-HTTP.reds
+#include %Steam-UnifiedMessages.reds
+#include %Steam-Controller.reds
+#include %Steam-UGC.reds
+#include %Steam-AppList.reds
+#include %Steam-HTMLSurface.reds
+#include %Steam-Inventory.reds
+#include %Steam-Video.reds
+#include %Steam-GameServer.reds
+#include %Steam-GameServerStats.reds
 
 SteamAPI_Shutdown
 
