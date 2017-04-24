@@ -9,7 +9,7 @@ Red/System [
 IAppList: GetISteamAppList
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamAppList_GetNumInstalledApps: "SteamAPI_ISteamAppList_GetNumInstalledApps" [
 			instancePtr [ISteamAppList!]       ;intptr_t
 			return: [integer!]

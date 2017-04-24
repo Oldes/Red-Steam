@@ -9,7 +9,7 @@ Red/System [
 IApps: GetISteamApps
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL  [
 		SteamAPI_ISteamApps_BIsSubscribed: "SteamAPI_ISteamApps_BIsSubscribed" [
 			instancePtr [ISteamApps!]          ;intptr_t
 			return: [logic!]

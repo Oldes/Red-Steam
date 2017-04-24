@@ -7,7 +7,7 @@ Red/System [
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamGameServer_InitGameServer: "SteamAPI_ISteamGameServer_InitGameServer" [
 			instancePtr      [ISteamGameServer!];intptr_t
 			unIP             [integer!]        ;uint32

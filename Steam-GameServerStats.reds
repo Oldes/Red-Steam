@@ -7,7 +7,7 @@ Red/System [
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamGameServerStats_RequestUserStats: "SteamAPI_ISteamGameServerStats_RequestUserStats" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID

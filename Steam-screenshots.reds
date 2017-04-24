@@ -31,7 +31,7 @@ IScreenshots: GetISteamScreenshots
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamScreenshots_WriteScreenshot: "SteamAPI_ISteamScreenshots_WriteScreenshot" [
 			instancePtr [ISteamScreenshots!]   ;intptr_t
 			pubRGB      [int-ptr!]             ;void *

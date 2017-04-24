@@ -10,7 +10,7 @@ Red/System [
 IUnifiedMessages: GetISteamUnifiedMessages
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamUnifiedMessages_SendMethod: "SteamAPI_ISteamUnifiedMessages_SendMethod" [
 			instancePtr         [ISteamUnifiedMessages!];intptr_t
 			pchServiceMethod    [c-string!]    ;const char *

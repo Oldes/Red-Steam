@@ -9,7 +9,7 @@ Red/System [
 IMatchmakingServers: GetISteamMatchmakingServers
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamMatchmakingServers_RequestInternetServerList: {SteamAPI_ISteamMatchmakingServers_RequestInternetServerList} [
 			instancePtr         [ISteamMatchmakingServers!];intptr_t
 			iApp                [integer!]     ;AppId_t

@@ -77,7 +77,7 @@ Red/System [
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamFriends_GetPersonaName: "SteamAPI_ISteamFriends_GetPersonaName" [
 			instancePtr [ISteamFriends!]       ;intptr_t
 			return: [c-string!]

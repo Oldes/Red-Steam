@@ -32,7 +32,7 @@ IUtils: GetISteamUtils
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamUtils_GetSecondsSinceAppActive: "SteamAPI_ISteamUtils_GetSecondsSinceAppActive" [
 			instancePtr [ISteamUtils!]         ;intptr_t
 			return: [integer!]

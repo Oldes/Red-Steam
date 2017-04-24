@@ -38,7 +38,7 @@ IMatchmaking: GetISteamMatchmaking
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamMatchmaking_GetFavoriteGameCount: "SteamAPI_ISteamMatchmaking_GetFavoriteGameCount" [
 			instancePtr [ISteamMatchmaking!]   ;intptr_t
 			return: [integer!]

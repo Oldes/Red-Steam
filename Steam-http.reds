@@ -91,7 +91,7 @@ IHTTP: GetISteamHTTP
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamHTTP_CreateHTTPRequest: "SteamAPI_ISteamHTTP_CreateHTTPRequest" [
 			instancePtr        [ISteamHTTP!]   ;intptr_t
 			eHTTPRequestMethod [EHTTPMethod!]  ;EHTTPMethod

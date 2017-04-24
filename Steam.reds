@@ -6,6 +6,13 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 	
 ]
+#define STEAM_CALL cdecl
+
+#switch OS [
+	Windows   [	#define STEAM_LIBRARY "Steam_api.dll"      ]
+	MacOSX    [ #define STEAM_LIBRARY "libsteam_api.dylib" ]
+	#default  [ #define STEAM_LIBRARY "libsteam_api.so"    ]
+]
 
 #define ISteamClient!             int-ptr!
 #define ISteamUser!               int-ptr!
@@ -115,36 +122,27 @@ LeaderboardEntry!: alias struct! [
 	]
 ]
 
-unless SteamAPI_Init [
-	print-line "Steam init failed!"
-	quit 1
-]
-print-line ["Steam running: " SteamAPI_IsSteamRunning]
-
-
-#include %Steam-Client.reds
-#include %Steam-User.reds
-#include %Steam-Friends.reds
-#include %Steam-Utils.reds
-#include %Steam-Matchmaking.reds
-#include %Steam-MatchmakingServers.reds
-#include %Steam-RemoteStorage.reds
-#include %Steam-UserStats.reds
-#include %Steam-Apps.reds
-#include %Steam-Networking.reds
-#include %Steam-Screenshots.reds
-#include %Steam-Music.reds
-#include %Steam-MusicRemote.reds
-#include %Steam-HTTP.reds
-#include %Steam-UnifiedMessages.reds
-#include %Steam-Controller.reds
-#include %Steam-UGC.reds
-#include %Steam-AppList.reds
-#include %Steam-HTMLSurface.reds
-#include %Steam-Inventory.reds
-#include %Steam-Video.reds
-#include %Steam-GameServer.reds
-#include %Steam-GameServerStats.reds
-
-SteamAPI_Shutdown
-
+;- Include in your app when needed:
+;#include %Steam-Client.reds
+;#include %Steam-User.reds
+;#include %Steam-Friends.reds
+;#include %Steam-Utils.reds
+;#include %Steam-Matchmaking.reds
+;#include %Steam-MatchmakingServers.reds
+;#include %Steam-RemoteStorage.reds
+;#include %Steam-UserStats.reds
+;#include %Steam-Apps.reds
+;#include %Steam-Networking.reds
+;#include %Steam-Screenshots.reds
+;#include %Steam-Music.reds
+;#include %Steam-MusicRemote.reds
+;#include %Steam-HTTP.reds
+;#include %Steam-UnifiedMessages.reds
+;#include %Steam-Controller.reds
+;#include %Steam-UGC.reds
+;#include %Steam-AppList.reds
+;#include %Steam-HTMLSurface.reds
+;#include %Steam-Inventory.reds
+;#include %Steam-Video.reds
+;#include %Steam-GameServer.reds
+;#include %Steam-GameServerStats.reds

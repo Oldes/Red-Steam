@@ -94,7 +94,7 @@ IRemoteStorage: GetISteamRemoteStorage
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamRemoteStorage_FileWrite: "SteamAPI_ISteamRemoteStorage_FileWrite" [
 			instancePtr [ISteamRemoteStorage!] ;intptr_t
 			pchFile     [c-string!]            ;const char *

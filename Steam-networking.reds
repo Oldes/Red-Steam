@@ -82,7 +82,7 @@ INetworking: GetISteamNetworking
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamNetworking_SendP2PPacket: "SteamAPI_ISteamNetworking_SendP2PPacket" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			steamIDRemote [CSteamID!]          ;class CSteamID

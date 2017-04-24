@@ -255,7 +255,7 @@ IController: GetISteamController
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamController_Init: "SteamAPI_ISteamController_Init" [
 			instancePtr [ISteamController!]    ;intptr_t
 			return: [logic!]

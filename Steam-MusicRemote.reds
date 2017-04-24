@@ -9,7 +9,7 @@ Red/System [
 IMusicRemote: GetISteamMusicRemote
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamMusicRemote_RegisterSteamMusicRemote: {SteamAPI_ISteamMusicRemote_RegisterSteamMusicRemote} [
 			instancePtr [ISteamMusicRemote!]   ;intptr_t
 			pchName     [c-string!]            ;const char *

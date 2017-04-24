@@ -9,7 +9,7 @@ Red/System [
 IUser: GetISteamUser
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamUser_GetHSteamUser: "SteamAPI_ISteamUser_GetHSteamUser" [
 			instancePtr [ISteamUser!]          ;intptr_t
 			return: [integer!]

@@ -9,7 +9,7 @@ Red/System [
 IVideo: GetISteamVideo
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamVideo_GetVideoURL: "SteamAPI_ISteamVideo_GetVideoURL" [
 			instancePtr  [ISteamVideo!]        ;intptr_t
 			unVideoAppID [integer!]            ;AppId_t

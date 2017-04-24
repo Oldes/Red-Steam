@@ -49,7 +49,7 @@ IUserStats: GetISteamUserStats
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamUserStats_RequestCurrentStats: "SteamAPI_ISteamUserStats_RequestCurrentStats" [
 			instancePtr [ISteamUserStats!]     ;intptr_t
 			return: [logic!]

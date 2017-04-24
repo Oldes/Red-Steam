@@ -162,7 +162,7 @@ IUGC: GetISteamUGC
 
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamUGC_CreateQueryUserUGCRequest: "SteamAPI_ISteamUGC_CreateQueryUserUGCRequest" [
 			instancePtr      [ISteamUGC!]      ;intptr_t
 			unAccountID      [integer!]        ;AccountID_t

@@ -22,7 +22,7 @@ IHTMLSurface: GetISteamHTMLSurface
 ]
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamHTMLSurface_DestructISteamHTMLSurface: {SteamAPI_ISteamHTMLSurface_DestructISteamHTMLSurface} [
 			instancePtr [ISteamHTMLSurface!]   ;intptr_t
 		]

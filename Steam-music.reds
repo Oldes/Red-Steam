@@ -17,7 +17,7 @@ Red/System [
 IMusic: GetISteamMusic
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamMusic_BIsEnabled: "SteamAPI_ISteamMusic_BIsEnabled" [
 			instancePtr [ISteamMusic!]         ;intptr_t
 			return: [logic!]

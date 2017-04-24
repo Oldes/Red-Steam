@@ -9,7 +9,7 @@ Red/System [
 IInventory: GetISteamInventory
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamInventory_GetResultStatus: "SteamAPI_ISteamInventory_GetResultStatus" [
 			instancePtr  [ISteamInventory!]    ;intptr_t
 			resultHandle [integer!]            ;SteamInventoryResult_t

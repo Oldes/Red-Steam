@@ -9,7 +9,7 @@ Red/System [
 IClient: GetISteamClient
 
 #import [
-	"Steam_api.dll" stdcall [
+	STEAM_LIBRARY STEAM_CALL  [
 		SteamAPI_ISteamClient_CreateSteamPipe: "SteamAPI_ISteamClient_CreateSteamPipe" [
 			instancePtr [ISteamClient!]        ;intptr_t
 			return: [integer!]
