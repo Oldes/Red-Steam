@@ -7,3 +7,4 @@ Purpose of this project is to provide access to **Steam API**, which is part of 
 [Steam.reds](Steam.reds) is full low level API for **Red/System** made by parsing of Steam header files (SDK v1.39) with manual review.
 [Steam.red](Steam.red) is minimal binding for **Red** level and could be used as a starting point for more comples work. 
 
+Current test files are only basic console applications, which prints some info (must be compiled!). To get the info, you must also have **Steam** installed and running and get Steam's library file for your OS in the same location like compiled test executables. Red version now automatically creates `steam_appid.txt` file with Valve's sample game ID.
