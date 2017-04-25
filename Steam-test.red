@@ -9,5 +9,10 @@ Red [
 
 #include %Steam.red
 
+if not exists? %steam_appid.txt [
+	write %steam_appid.txt 480 ;using Valve's sample application ID
+]
+
 Steam/init
 Steam/info
+Steam/shutdown
