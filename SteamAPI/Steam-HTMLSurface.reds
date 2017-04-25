@@ -6,8 +6,6 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IHTMLSurface: GetISteamHTMLSurface
-
 #enum EHTMLMouseButton! [
 	eHTMLMouseButton_Left:   0
 	eHTMLMouseButton_Right:  1

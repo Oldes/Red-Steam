@@ -6,6 +6,8 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
+ISteamGameServer: declare ISteamGameServer!
+
 #import [
 	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamGameServer_InitGameServer: "SteamAPI_ISteamGameServer_InitGameServer" [

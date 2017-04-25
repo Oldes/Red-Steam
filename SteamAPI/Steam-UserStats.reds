@@ -7,7 +7,7 @@ Red/System [
 	
 ]
 
-IUserStats: GetISteamUserStats
+ISteamUserStats: declare ISteamUserStats!
 
 ; size limit on stat or achievement name (UTF-8 encoded)
 #define k_cchStatNameMax 128 

@@ -6,7 +6,7 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IRemoteStorage: GetISteamRemoteStorage
+ISteamRemoteStorage: declare ISteamRemoteStorage!
 
 #enum ERemoteStoragePlatform! [
 	k_ERemoteStoragePlatformNone:		0
@@ -427,28 +427,5 @@ IRemoteStorage: GetISteamRemoteStorage
 			unPriority  [integer!]             ;uint32
 			return: [uint64! value]
 		]
-	]
-]
-
-
-
-write-file: func[file [c-string!] data [byte-ptr!] length [integer!] return: [logic!]][
-	SteamAPI_ISteamRemoteStorage_FileWrite IRemoteStorage file data length
-]
-file-count: func[return: [integer!]][
-	SteamAPI_ISteamRemoteStorage_GetFileCount IRemoteStorage
-]
-list-files: func[
-	/local
-		num [integer!]
-		bytes [integer!] 
-		name [c-string!]
-][
-	num: SteamAPI_ISteamRemoteStorage_GetFileCount IRemoteStorage
-	bytes: 0
-	while [num > 0] [
-		name: SteamAPI_ISteamRemoteStorage_GetFileNameAndSize IRemoteStorage num :bytes
-		print-line [num #"^-" name #"^-" bytes]
-		num: num - 1
 	]
 ]

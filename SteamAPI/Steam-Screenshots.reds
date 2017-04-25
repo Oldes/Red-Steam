@@ -6,8 +6,7 @@ Red/System [
 	License: "BSD-3 - https:;github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IScreenshots: GetISteamScreenshots
-
+ISteamScreenshots: declare ISteamScreenshots!
 
 #define k_nScreenshotMaxTaggedUsers 32
 #define k_nScreenshotMaxTaggedPublishedFiles 32

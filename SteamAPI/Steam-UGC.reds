@@ -6,8 +6,7 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IUGC: GetISteamUGC
-
+ISteamUGC: declare ISteamUGC!
 ;Matching UGC types for queries
 #enum EUGCMatchingUGCType! [
 	k_EUGCMatchingUGCType_Items:              0     ;both mtx items and ready-to-use items

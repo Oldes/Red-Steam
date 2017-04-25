@@ -1,15 +1,13 @@
-Red/System [
-	Title:   "Red/System Steam API binding test"
+Red [
+	Title:   "Red Steam API binding test"
 	Author:  "Oldes"
-	File: 	 %Steam-test.reds
+	File: 	 %Steam-test.red
 	Rights:  "Copyright (C) 2017 David 'Oldes' Oliva. All rights reserved."
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 	
 ]
 
-#include %Steam.reds
+#include %Steam.red
 
-init
-info
-SteamAPI_Shutdown
-
+Steam/init
+Steam/info

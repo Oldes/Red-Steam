@@ -6,8 +6,7 @@ Red/System [
 	License: "BSD-3 - https:;github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-INetworking: GetISteamNetworking
-
+ISteamNetworking: declare ISteamNetworking!
 
 ; list of possible errors returned by SendP2PPacket() API
 ; these will be posted in the P2PSessionConnectFail_t callback

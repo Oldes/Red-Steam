@@ -6,6 +6,7 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
+ISteamMusic: declare ISteamMusic!
 
 #enum AudioPlayback_Status! [
 	AudioPlayback_Undefined 
@@ -13,8 +14,6 @@ Red/System [
 	AudioPlayback_Paused
 	AudioPlayback_Idle
 ]
-
-IMusic: GetISteamMusic
 
 #import [
 	STEAM_LIBRARY STEAM_CALL [

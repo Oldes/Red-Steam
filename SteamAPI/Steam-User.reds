@@ -6,7 +6,7 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IUser: GetISteamUser
+ISteamUser: declare ISteamUser!
 
 #import [
 	STEAM_LIBRARY STEAM_CALL [
@@ -173,19 +173,3 @@ IUser: GetISteamUser
 		]
 	]
 ]
-
-HUSer: SteamAPI_ISteamUser_GetHSteamUser IUser
-
-logged?: func[return: [logic!]][SteamAPI_ISteamUser_BLoggedOn IUser]
-id: func[
-	return: [uint64!]
-	/local
-		i [uint64! value]
-][
-	i: SteamAPI_ISteamUser_GetSteamID IUser
-	print-line [as int-ptr! i/hi " " as int-ptr! i/lo]
-	i
-]
-
-behindNAT?: func[return: [logic!]][SteamAPI_ISteamUser_BIsBehindNAT IUser]
-level: func[return: [integer!]][SteamAPI_ISteamUser_GetPlayerSteamLevel IUser]

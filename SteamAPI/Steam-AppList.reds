@@ -6,7 +6,7 @@ Red/System [
 	License: "BSD-3 - https://github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IAppList: GetISteamAppList
+ISteamAppList: declare ISteamAppList!
 
 #import [
 	STEAM_LIBRARY STEAM_CALL [

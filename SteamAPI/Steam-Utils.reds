@@ -6,7 +6,7 @@ Red/System [
 	License: "BSD-3 - https:;github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
-IUtils: GetISteamUtils
+ISteamUtils: declare ISteamUtils!
 
 ; Steam API call failure results
 #enum ESteamAPICallFailure! [

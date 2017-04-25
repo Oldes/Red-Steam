@@ -6,6 +6,8 @@ Red/System [
 	License: "BSD-3 - https:github.com/red/red/blob/master/BSD-3-License.txt"
 ]
 
+ISteamFriends: declare ISteamFriends!
+
 ;-----------------------------------------------------------------------------
 ;- Purpose: flags for enumerating friends list, or quickly checking a the relationship between users
 ;-----------------------------------------------------------------------------
@@ -448,8 +450,3 @@ Red/System [
 	]
 ]
 
-IFriends: GetISteamFriends
-print-line ["SteamAPI_ISteamFriends_GetPersonaName: " SteamAPI_ISteamFriends_GetPersonaName IFriends]
-print-line ["SteamAPI_ISteamFriends_GetPersonaState: " SteamAPI_ISteamFriends_GetPersonaState IFriends]
-print-line ["SteamAPI_ISteamFriends_GetFriendCount (all): " SteamAPI_ISteamFriends_GetFriendCount IFriends EFriendFlagAll]
-SteamAPI_ISteamFriends_ActivateGameOverlay IFriends "achievements"

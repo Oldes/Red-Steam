@@ -7,7 +7,7 @@ Red/System [
 	
 ]
 
-IHTTP: GetISteamHTTP
+ISteamHTTP: declare ISteamHTTP!
 
 ; This enum is used in client API methods, do not re-number existing values.
 #enum EHTTPMethod! [

@@ -7,8 +7,7 @@ Red/System [
 	
 ]
 
-IMatchmaking: GetISteamMatchmaking
-
+ISteamMatchmaking: declare ISteamMatchmaking!
 ; lobby type description
 #enum ELobbyType! [
 	k_ELobbyTypePrivate: 0		; only way to join the lobby is to invite to someone else
