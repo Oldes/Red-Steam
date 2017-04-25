@@ -63,7 +63,7 @@ CGameID!: alias struct! [
 	]]
 ]
 
-#define CSteamID! uint64!
+#define CSteamID! [uint64! value]
 #define CSteamID-ref! uint64-ref!
 
 FriendGameInfo!: alias struct! [

@@ -46,6 +46,7 @@ list-friends: func[
 	/local
 		num [integer!]
 		id  [uint64! value]
+		name [c-string!]
 ][
 	num: SteamAPI_ISteamFriends_GetFriendCount IFriends type
 	print-line ["Friends count: " num]
@@ -53,7 +54,8 @@ list-friends: func[
 	while [num > 0][
 		num: num - 1
 		id: SteamAPI_ISteamFriends_GetFriendByIndex IFriends num type
-		print-line [as int-ptr! id/hi " " as int-ptr! id/lo]
+		name: SteamAPI_ISteamFriends_GetFriendPersonaName IFriends id 
+		print-line [as int-ptr! id/hi " " as int-ptr! id/lo " " name]
 	]
 ]
 
