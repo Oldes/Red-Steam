@@ -19,11 +19,11 @@ ISteamMusic: declare ISteamMusic!
 	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamMusic_BIsEnabled: "SteamAPI_ISteamMusic_BIsEnabled" [
 			instancePtr [ISteamMusic!]         ;intptr_t
-			return: [byte!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamMusic_BIsPlaying: "SteamAPI_ISteamMusic_BIsPlaying" [
 			instancePtr [ISteamMusic!]         ;intptr_t
-			return: [byte!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamMusic_GetPlaybackStatus: "SteamAPI_ISteamMusic_GetPlaybackStatus" [
 			instancePtr [ISteamMusic!]         ;intptr_t
