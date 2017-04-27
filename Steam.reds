@@ -23,7 +23,10 @@ init: func[
 	ISteamFriends:  GetISteamFriends
 	ISteamUser:     GetISteamUser
 	ISteamRemoteStorage: GetISteamRemoteStorage
-	ISteamMusic:    GetISteamMusic
+	ISteamMusic:     GetISteamMusic
+	ISteamUserStats: GetISteamUserStats
+
+	SteamAPI_ISteamUserStats_RequestCurrentStats ISteamUserStats
 	true
 ]
 
@@ -90,6 +93,24 @@ list-files: func[
 		
 	]
 ]
+list-achievements: func[
+	/local
+		num [integer!]
+		bytes [integer!] 
+		name [c-string!]
+		bAchieved [logic-ref!]
+][
+	num: SteamAPI_ISteamUserStats_GetNumAchievements ISteamUserStats
+	bytes: 0
+	bAchieved: declare logic-ref!
+	while [num > 0] [
+		num: num - 1
+		name: SteamAPI_ISteamUserStats_GetAchievementName ISteamUserStats num
+		SteamAPI_ISteamUserStats_GetAchievement ISteamUserStats name bAchieved
+		print-line [num #"^-" name #"^-" bAchieved/value]
+	]
+]
+
 
 info: func[
 	/local
@@ -124,10 +145,10 @@ info: func[
 		print-line ""
 		print-line ["Music_BIsEnabled: " as logic! SteamAPI_ISteamMusic_BIsEnabled ISteamMusic]
 		print-line ["Music_BIsPlaying: " as logic! SteamAPI_ISteamMusic_BIsPlaying ISteamMusic]
+
+		print-line ""
+		print-line ["UserStats_SetAchievement (ACH_TRAVEL_FAR_SINGLE): " as logic! SteamAPI_ISteamUserStats_SetAchievement ISteamUserStats "ACH_TRAVEL_FAR_SINGLE"]
+		print-line "Game achievements:"
+		list-achievements
 	]
 ]
-
-
-;HUSer: SteamAPI_ISteamUser_GetHSteamUser ISteamUser
-
-
