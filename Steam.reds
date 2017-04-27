@@ -96,12 +96,10 @@ list-files: func[
 list-achievements: func[
 	/local
 		num [integer!]
-		bytes [integer!] 
 		name [c-string!]
 		bAchieved [logic-ref!]
 ][
 	num: SteamAPI_ISteamUserStats_GetNumAchievements ISteamUserStats
-	bytes: 0
 	bAchieved: declare logic-ref!
 	while [num > 0] [
 		num: num - 1
