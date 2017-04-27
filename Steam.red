@@ -44,13 +44,14 @@ Steam: context [
 	file-exists?: routine [
 		"Determines if a file exists on Steam Cloud"
 		file [file!]
+		return: [logic!]
 		/local
 			c-file [c-string!]
 			len    [integer!]
 	][
 		len: -1
 		c-file: unicode/to-utf8 file :len
-		logic/box Steam/file-exists? c-file
+		Steam/file-exists? c-file
 	]
 	file-read: routine [
 		"Reads data from Steam Cloud"
