@@ -210,8 +210,8 @@ ISteamRemoteStorage: declare ISteamRemoteStorage!
 		]
 		SteamAPI_ISteamRemoteStorage_GetQuota: "SteamAPI_ISteamRemoteStorage_GetQuota" [
 			instancePtr      [ISteamRemoteStorage!];intptr_t
-			pnTotalBytes     [uint64!]     ;uint64 *
-			puAvailableBytes [uint64!]     ;uint64 *
+			pnTotalBytes     [uint64-ref!]     ;uint64 *
+			puAvailableBytes [uint64-ref!]     ;uint64 *
 			return: [logic!]
 		]
 		SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount: {SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount} [
