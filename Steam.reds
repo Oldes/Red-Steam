@@ -103,6 +103,11 @@ info: func[
 		print-line ["User_GetPlayerSteamLevel: " SteamAPI_ISteamUser_GetPlayerSteamLevel ISteamUser]
 		print-line ["Friends_GetPersonaName: " SteamAPI_ISteamFriends_GetPersonaName ISteamFriends]
 		print-line ["Friends_GetPersonaState: " SteamAPI_ISteamFriends_GetPersonaState ISteamFriends]
+
+		print-line ""
+		list-friends EFriendFlagAll
+
+		print-line ""
 		print-line ["RemoteStorage_IsCloudEnabledForAccount: " as logic! SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount ISteamRemoteStorage]
 
 		total: declare uint64! 0
@@ -113,7 +118,6 @@ info: func[
 			print-line ["RemoteStorage_GetQuota total: " total/lo " available: " available/lo]
 		]
 
-		list-friends EFriendFlagAll
 		print-line ["Files on SteamCloud:"]
 		list-files
 
