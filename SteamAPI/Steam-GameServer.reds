@@ -18,7 +18,7 @@ ISteamGameServer: declare ISteamGameServer!
 			unFlags          [integer!]        ;uint32
 			nGameAppId       [integer!]        ;AppId_t
 			pchVersionString [c-string!]       ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_SetProduct: "SteamAPI_ISteamGameServer_SetProduct" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -48,11 +48,11 @@ ISteamGameServer: declare ISteamGameServer!
 		]
 		SteamAPI_ISteamGameServer_BLoggedOn: "SteamAPI_ISteamGameServer_BLoggedOn" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_BSecure: "SteamAPI_ISteamGameServer_BSecure" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_GetSteamID: "SteamAPI_ISteamGameServer_GetSteamID" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -60,7 +60,7 @@ ISteamGameServer: declare ISteamGameServer!
 		]
 		SteamAPI_ISteamGameServer_WasRestartRequested: "SteamAPI_ISteamGameServer_WasRestartRequested" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_SetMaxPlayerCount: "SteamAPI_ISteamGameServer_SetMaxPlayerCount" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -116,7 +116,7 @@ ISteamGameServer: declare ISteamGameServer!
 			pvAuthBlob      [byte-ptr!]        ;const void *
 			cubAuthBlobSize [integer!]         ;uint32
 			pSteamIDUser    [CSteamID-ref!]    ;class CSteamID *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_CreateUnauthenticatedUserConnection: {SteamAPI_ISteamGameServer_CreateUnauthenticatedUserConnection} [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -131,7 +131,7 @@ ISteamGameServer: declare ISteamGameServer!
 			steamIDUser   [CSteamID!]          ;class CSteamID
 			pchPlayerName [c-string!]          ;const char *
 			uScore        [integer!]           ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_GetAuthSessionTicket: "SteamAPI_ISteamGameServer_GetAuthSessionTicket" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -165,7 +165,7 @@ ISteamGameServer: declare ISteamGameServer!
 			instancePtr  [ISteamGameServer!]   ;intptr_t
 			steamIDUser  [CSteamID!]           ;class CSteamID
 			steamIDGroup [CSteamID!]           ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_GetGameplayStats: "SteamAPI_ISteamGameServer_GetGameplayStats" [
 			instancePtr [ISteamGameServer!]    ;intptr_t
@@ -184,7 +184,7 @@ ISteamGameServer: declare ISteamGameServer!
 			cbData      [integer!]             ;int
 			srcIP       [integer!]             ;uint32
 			srcPort     [uint16!]              ;uint16
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServer_GetNextOutgoingPacket: "SteamAPI_ISteamGameServer_GetNextOutgoingPacket" [
 			instancePtr [ISteamGameServer!]    ;intptr_t

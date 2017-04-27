@@ -20,7 +20,7 @@ ISteamInventory: declare ISteamInventory!
 			resultHandle        [integer!]     ;SteamInventoryResult_t
 			pOutItemsArray      [int-ptr!]     ;struct SteamItemDetails_t *
 			punOutItemsArraySize[int-ptr!]     ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GetResultTimestamp: "SteamAPI_ISteamInventory_GetResultTimestamp" [
 			instancePtr  [ISteamInventory!]    ;intptr_t
@@ -31,7 +31,7 @@ ISteamInventory: declare ISteamInventory!
 			instancePtr     [ISteamInventory!] ;intptr_t
 			resultHandle    [integer!]         ;SteamInventoryResult_t
 			steamIDExpected [CSteamID!]        ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_DestroyResult: "SteamAPI_ISteamInventory_DestroyResult" [
 			instancePtr  [ISteamInventory!]    ;intptr_t
@@ -40,21 +40,21 @@ ISteamInventory: declare ISteamInventory!
 		SteamAPI_ISteamInventory_GetAllItems: "SteamAPI_ISteamInventory_GetAllItems" [
 			instancePtr   [ISteamInventory!]   ;intptr_t
 			pResultHandle [int-ptr!]           ;SteamInventoryResult_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GetItemsByID: "SteamAPI_ISteamInventory_GetItemsByID" [
 			instancePtr        [ISteamInventory!];intptr_t
 			pResultHandle      [int-ptr!]      ;SteamInventoryResult_t *
 			pInstanceIDs       [uint64-ref!]   ;const SteamItemInstanceID_t *
 			unCountInstanceIDs [integer!]      ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_SerializeResult: "SteamAPI_ISteamInventory_SerializeResult" [
 			instancePtr      [ISteamInventory!];intptr_t
 			resultHandle     [integer!]        ;SteamInventoryResult_t
 			pOutBuffer       [byte-ptr!]       ;void *
 			punOutBufferSize [int-ptr!]        ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_DeserializeResult: "SteamAPI_ISteamInventory_DeserializeResult" [
 			instancePtr         [ISteamInventory!];intptr_t
@@ -62,7 +62,7 @@ ISteamInventory: declare ISteamInventory!
 			pBuffer             [byte-ptr!]    ;const void *
 			unBufferSize        [integer!]     ;uint32
 			bRESERVED_MUST_BE_FALSE[logic!]    ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GenerateItems: "SteamAPI_ISteamInventory_GenerateItems" [
 			instancePtr      [ISteamInventory!];intptr_t
@@ -70,32 +70,32 @@ ISteamInventory: declare ISteamInventory!
 			pArrayItemDefs   [int-ptr!]        ;const SteamItemDef_t *
 			punArrayQuantity [int-ptr!]        ;const uint32 *
 			unArrayLength    [integer!]        ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GrantPromoItems: "SteamAPI_ISteamInventory_GrantPromoItems" [
 			instancePtr   [ISteamInventory!]   ;intptr_t
 			pResultHandle [int-ptr!]           ;SteamInventoryResult_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_AddPromoItem: "SteamAPI_ISteamInventory_AddPromoItem" [
 			instancePtr   [ISteamInventory!]   ;intptr_t
 			pResultHandle [int-ptr!]           ;SteamInventoryResult_t *
 			itemDef       [integer!]           ;SteamItemDef_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_AddPromoItems: "SteamAPI_ISteamInventory_AddPromoItems" [
 			instancePtr    [ISteamInventory!]  ;intptr_t
 			pResultHandle  [int-ptr!]          ;SteamInventoryResult_t *
 			pArrayItemDefs [int-ptr!]          ;const SteamItemDef_t *
 			unArrayLength  [integer!]          ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_ConsumeItem: "SteamAPI_ISteamInventory_ConsumeItem" [
 			instancePtr   [ISteamInventory!]   ;intptr_t
 			pResultHandle [int-ptr!]           ;SteamInventoryResult_t *
 			itemConsume   [uint64! value]      ;SteamItemInstanceID_t
 			unQuantity    [integer!]           ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_ExchangeItems: "SteamAPI_ISteamInventory_ExchangeItems" [
 			instancePtr         [ISteamInventory!];intptr_t
@@ -106,7 +106,7 @@ ISteamInventory: declare ISteamInventory!
 			pArrayDestroy       [uint64-ref!]  ;const SteamItemInstanceID_t *
 			punArrayDestroyQuantity[int-ptr!]  ;const uint32 *
 			unArrayDestroyLength[integer!]     ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_TransferItemQuantity: "SteamAPI_ISteamInventory_TransferItemQuantity" [
 			instancePtr   [ISteamInventory!]   ;intptr_t
@@ -114,7 +114,7 @@ ISteamInventory: declare ISteamInventory!
 			itemIdSource  [uint64! value]      ;SteamItemInstanceID_t
 			unQuantity    [integer!]           ;uint32
 			itemIdDest    [uint64! value]      ;SteamItemInstanceID_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_SendItemDropHeartbeat: "SteamAPI_ISteamInventory_SendItemDropHeartbeat" [
 			instancePtr [ISteamInventory!]     ;intptr_t
@@ -123,7 +123,7 @@ ISteamInventory: declare ISteamInventory!
 			instancePtr        [ISteamInventory!];intptr_t
 			pResultHandle      [int-ptr!]      ;SteamInventoryResult_t *
 			dropListDefinition [integer!]      ;SteamItemDef_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_TradeItems: "SteamAPI_ISteamInventory_TradeItems" [
 			instancePtr         [ISteamInventory!];intptr_t
@@ -135,17 +135,17 @@ ISteamInventory: declare ISteamInventory!
 			pArrayGet           [uint64-ref!]  ;const SteamItemInstanceID_t *
 			pArrayGetQuantity   [int-ptr!]     ;const uint32 *
 			nArrayGetLength     [integer!]     ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_LoadItemDefinitions: "SteamAPI_ISteamInventory_LoadItemDefinitions" [
 			instancePtr [ISteamInventory!]     ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GetItemDefinitionIDs: "SteamAPI_ISteamInventory_GetItemDefinitionIDs" [
 			instancePtr         [ISteamInventory!];intptr_t
 			pItemDefIDs         [int-ptr!]     ;SteamItemDef_t *
 			punItemDefIDsArraySize[int-ptr!]   ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_GetItemDefinitionProperty: "SteamAPI_ISteamInventory_GetItemDefinitionProperty" [
 			instancePtr         [ISteamInventory!];intptr_t
@@ -153,7 +153,7 @@ ISteamInventory: declare ISteamInventory!
 			pchPropertyName     [c-string!]    ;const char *
 			pchValueBuffer      [c-string!]    ;char *
 			punValueBufferSizeOut[int-ptr!]    ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamInventory_RequestEligiblePromoItemDefinitionsIDs: {SteamAPI_ISteamInventory_RequestEligiblePromoItemDefinitionsIDs} [
 			instancePtr [ISteamInventory!]     ;intptr_t
@@ -165,7 +165,7 @@ ISteamInventory: declare ISteamInventory!
 			steamID             [CSteamID!]    ;class CSteamID
 			pItemDefIDs         [int-ptr!]     ;SteamItemDef_t *
 			punItemDefIDsArraySize[int-ptr!]   ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 	]
 ]

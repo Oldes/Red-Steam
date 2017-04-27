@@ -198,7 +198,7 @@ ISteamUGC: declare ISteamUGC!
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			index       [integer!]             ;uint32
 			pDetails    [int-ptr!]             ;struct SteamUGCDetails_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCPreviewURL: "SteamAPI_ISteamUGC_GetQueryUGCPreviewURL" [
 			instancePtr [ISteamUGC!]           ;intptr_t
@@ -206,7 +206,7 @@ ISteamUGC: declare ISteamUGC!
 			index       [integer!]             ;uint32
 			pchURL      [c-string!]            ;char *
 			cchURLSize  [integer!]             ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCMetadata: "SteamAPI_ISteamUGC_GetQueryUGCMetadata" [
 			instancePtr     [ISteamUGC!]       ;intptr_t
@@ -214,7 +214,7 @@ ISteamUGC: declare ISteamUGC!
 			index           [integer!]         ;uint32
 			pchMetadata     [c-string!]        ;char *
 			cchMetadatasize [integer!]         ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCChildren: "SteamAPI_ISteamUGC_GetQueryUGCChildren" [
 			instancePtr         [ISteamUGC!]   ;intptr_t
@@ -222,7 +222,7 @@ ISteamUGC: declare ISteamUGC!
 			index               [integer!]     ;uint32
 			pvecPublishedFileID [uint64-ref!]  ;PublishedFileId_t *
 			cMaxEntries         [integer!]     ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCStatistic: "SteamAPI_ISteamUGC_GetQueryUGCStatistic" [
 			instancePtr [ISteamUGC!]           ;intptr_t
@@ -230,7 +230,7 @@ ISteamUGC: declare ISteamUGC!
 			index       [integer!]             ;uint32
 			eStatType   [EItemStatistic!]      ;EItemStatistic
 			pStatValue  [uint64-ref!]          ;uint64 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews: {SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews} [
 			instancePtr [ISteamUGC!]           ;intptr_t
@@ -248,7 +248,7 @@ ISteamUGC: declare ISteamUGC!
 			pchOriginalFileName [c-string!]    ;char *
 			cchOriginalFileNameSize[integer!]  ;uint32
 			pPreviewType        [int-ptr!]     ;EItemPreviewType *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags: "SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags" [
 			instancePtr [ISteamUGC!]           ;intptr_t
@@ -265,109 +265,109 @@ ISteamUGC: declare ISteamUGC!
 			cchKeySize       [integer!]        ;uint32
 			pchValue         [c-string!]       ;char *
 			cchValueSize     [integer!]        ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_ReleaseQueryUGCRequest: "SteamAPI_ISteamUGC_ReleaseQueryUGCRequest" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddRequiredTag: "SteamAPI_ISteamUGC_AddRequiredTag" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			pTagName    [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddExcludedTag: "SteamAPI_ISteamUGC_AddExcludedTag" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			pTagName    [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnOnlyIDs: "SteamAPI_ISteamUGC_SetReturnOnlyIDs" [
 			instancePtr    [ISteamUGC!]        ;intptr_t
 			handle         [uint64! value]     ;UGCQueryHandle_t
 			bReturnOnlyIDs [logic!]            ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnKeyValueTags: "SteamAPI_ISteamUGC_SetReturnKeyValueTags" [
 			instancePtr         [ISteamUGC!]   ;intptr_t
 			handle              [uint64! value];UGCQueryHandle_t
 			bReturnKeyValueTags [logic!]       ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnLongDescription: "SteamAPI_ISteamUGC_SetReturnLongDescription" [
 			instancePtr         [ISteamUGC!]   ;intptr_t
 			handle              [uint64! value];UGCQueryHandle_t
 			bReturnLongDescription[logic!]     ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnMetadata: "SteamAPI_ISteamUGC_SetReturnMetadata" [
 			instancePtr     [ISteamUGC!]       ;intptr_t
 			handle          [uint64! value]    ;UGCQueryHandle_t
 			bReturnMetadata [logic!]           ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnChildren: "SteamAPI_ISteamUGC_SetReturnChildren" [
 			instancePtr     [ISteamUGC!]       ;intptr_t
 			handle          [uint64! value]    ;UGCQueryHandle_t
 			bReturnChildren [logic!]           ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnAdditionalPreviews: "SteamAPI_ISteamUGC_SetReturnAdditionalPreviews" [
 			instancePtr         [ISteamUGC!]   ;intptr_t
 			handle              [uint64! value];UGCQueryHandle_t
 			bReturnAdditionalPreviews[logic!]  ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetReturnTotalOnly: "SteamAPI_ISteamUGC_SetReturnTotalOnly" [
 			instancePtr      [ISteamUGC!]      ;intptr_t
 			handle           [uint64! value]   ;UGCQueryHandle_t
 			bReturnTotalOnly [logic!]          ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetLanguage: "SteamAPI_ISteamUGC_SetLanguage" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			pchLanguage [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetAllowCachedResponse: "SteamAPI_ISteamUGC_SetAllowCachedResponse" [
 			instancePtr     [ISteamUGC!]       ;intptr_t
 			handle          [uint64! value]    ;UGCQueryHandle_t
 			unMaxAgeSeconds [integer!]         ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetCloudFileNameFilter: "SteamAPI_ISteamUGC_SetCloudFileNameFilter" [
 			instancePtr         [ISteamUGC!]   ;intptr_t
 			handle              [uint64! value];UGCQueryHandle_t
 			pMatchCloudFileName [c-string!]    ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetMatchAnyTag: "SteamAPI_ISteamUGC_SetMatchAnyTag" [
 			instancePtr  [ISteamUGC!]          ;intptr_t
 			handle       [uint64! value]       ;UGCQueryHandle_t
 			bMatchAnyTag [logic!]              ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetSearchText: "SteamAPI_ISteamUGC_SetSearchText" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			pSearchText [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetRankedByTrendDays: "SteamAPI_ISteamUGC_SetRankedByTrendDays" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			unDays      [integer!]             ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddRequiredKeyValueTag: "SteamAPI_ISteamUGC_AddRequiredKeyValueTag" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCQueryHandle_t
 			pKey        [c-string!]            ;const char *
 			pValue      [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_RequestUGCDetails: "SteamAPI_ISteamUGC_RequestUGCDetails" [
 			instancePtr      [ISteamUGC!]      ;intptr_t
@@ -391,95 +391,95 @@ ISteamUGC: declare ISteamUGC!
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pchTitle    [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemDescription: "SteamAPI_ISteamUGC_SetItemDescription" [
 			instancePtr    [ISteamUGC!]        ;intptr_t
 			handle         [uint64! value]     ;UGCUpdateHandle_t
 			pchDescription [c-string!]         ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemUpdateLanguage: "SteamAPI_ISteamUGC_SetItemUpdateLanguage" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pchLanguage [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemMetadata: "SteamAPI_ISteamUGC_SetItemMetadata" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pchMetaData [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemVisibility: "SteamAPI_ISteamUGC_SetItemVisibility" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			eVisibility [ERemoteStoragePublishedFileVisibility!];ERemoteStoragePublishedFileVisibility
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemTags: "SteamAPI_ISteamUGC_SetItemTags" [
 			instancePtr  [ISteamUGC!]          ;intptr_t
 			updateHandle [uint64! value]       ;UGCUpdateHandle_t
 			pTags        [int-ptr!]            ;const struct SteamParamStringArray_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemContent: "SteamAPI_ISteamUGC_SetItemContent" [
 			instancePtr      [ISteamUGC!]      ;intptr_t
 			handle           [uint64! value]   ;UGCUpdateHandle_t
 			pszContentFolder [c-string!]       ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SetItemPreview: "SteamAPI_ISteamUGC_SetItemPreview" [
 			instancePtr    [ISteamUGC!]        ;intptr_t
 			handle         [uint64! value]     ;UGCUpdateHandle_t
 			pszPreviewFile [c-string!]         ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_RemoveItemKeyValueTags: "SteamAPI_ISteamUGC_RemoveItemKeyValueTags" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pchKey      [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddItemKeyValueTag: "SteamAPI_ISteamUGC_AddItemKeyValueTag" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pchKey      [c-string!]            ;const char *
 			pchValue    [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddItemPreviewFile: "SteamAPI_ISteamUGC_AddItemPreviewFile" [
 			instancePtr    [ISteamUGC!]        ;intptr_t
 			handle         [uint64! value]     ;UGCUpdateHandle_t
 			pszPreviewFile [c-string!]         ;const char *
 			type           [EItemPreviewType!] ;EItemPreviewType
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_AddItemPreviewVideo: "SteamAPI_ISteamUGC_AddItemPreviewVideo" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			pszVideoID  [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_UpdateItemPreviewFile: "SteamAPI_ISteamUGC_UpdateItemPreviewFile" [
 			instancePtr    [ISteamUGC!]        ;intptr_t
 			handle         [uint64! value]     ;UGCUpdateHandle_t
 			index          [integer!]          ;uint32
 			pszPreviewFile [c-string!]         ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_UpdateItemPreviewVideo: "SteamAPI_ISteamUGC_UpdateItemPreviewVideo" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			index       [integer!]             ;uint32
 			pszVideoID  [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_RemoveItemPreview: "SteamAPI_ISteamUGC_RemoveItemPreview" [
 			instancePtr [ISteamUGC!]           ;intptr_t
 			handle      [uint64! value]        ;UGCUpdateHandle_t
 			index       [integer!]             ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SubmitItemUpdate: "SteamAPI_ISteamUGC_SubmitItemUpdate" [
 			instancePtr   [ISteamUGC!]         ;intptr_t
@@ -549,26 +549,26 @@ ISteamUGC: declare ISteamUGC!
 			pchFolder        [c-string!]       ;char *
 			cchFolderSize    [integer!]        ;uint32
 			punTimeStamp     [int-ptr!]        ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_GetItemDownloadInfo: "SteamAPI_ISteamUGC_GetItemDownloadInfo" [
 			instancePtr        [ISteamUGC!]    ;intptr_t
 			nPublishedFileID   [uint64! value] ;PublishedFileId_t
 			punBytesDownloaded [uint64-ref!]   ;uint64 *
 			punBytesTotal      [uint64-ref!]   ;uint64 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_DownloadItem: "SteamAPI_ISteamUGC_DownloadItem" [
 			instancePtr      [ISteamUGC!]      ;intptr_t
 			nPublishedFileID [uint64! value]   ;PublishedFileId_t
 			bHighPriority    [logic!]          ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_BInitWorkshopForGameServer: "SteamAPI_ISteamUGC_BInitWorkshopForGameServer" [
 			instancePtr       [ISteamUGC!]     ;intptr_t
 			unWorkshopDepotID [integer!]       ;DepotId_t
 			pszFolder         [c-string!]      ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUGC_SuspendDownloads: "SteamAPI_ISteamUGC_SuspendDownloads" [
 			instancePtr [ISteamUGC!]           ;intptr_t

@@ -46,6 +46,9 @@ Red/System [
 int64!:  alias struct! [lo [integer!] hi [integer!]] ;@@ must be changed once we will get real integer64! type
 uin16!:  alias struct! [lo [byte!] hi [byte!]]       ;@@ must be changed once we will get real integer16! type
 
+#define steam-logic! byte! ;@@ steam is returning logic! from the flat api as a single byte
+                           ;@@ and there is a trash in the rest of bytes, so direct logic! return cannot be used
+
 #define uint64! int64!
 #define uint64-ref! uint64!
 int64-ref!:  alias struct! [value [int64!]]

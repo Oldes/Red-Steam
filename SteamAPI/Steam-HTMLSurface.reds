@@ -26,11 +26,11 @@ Red/System [
 		]
 		SteamAPI_ISteamHTMLSurface_Init: "SteamAPI_ISteamHTMLSurface_Init" [
 			instancePtr [ISteamHTMLSurface!]   ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTMLSurface_Shutdown: "SteamAPI_ISteamHTMLSurface_Shutdown" [
 			instancePtr [ISteamHTMLSurface!]   ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTMLSurface_CreateBrowser: "SteamAPI_ISteamHTMLSurface_CreateBrowser" [
 			instancePtr  [ISteamHTMLSurface!]  ;intptr_t

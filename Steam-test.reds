@@ -12,6 +12,8 @@ Red/System [
 init
 info
 
+print-line ""
+
 data: declare binary-ref!
 
 print-line ["exists hell.txt?  " file-exists? "hell.txt"]

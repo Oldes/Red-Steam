@@ -58,23 +58,23 @@ ISteamScreenshots: declare ISteamScreenshots!
 			instancePtr [ISteamScreenshots!]   ;intptr_t
 			hScreenshot [integer!]             ;ScreenshotHandle
 			pchLocation [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamScreenshots_TagUser: "SteamAPI_ISteamScreenshots_TagUser" [
 			instancePtr [ISteamScreenshots!]   ;intptr_t
 			hScreenshot [integer!]             ;ScreenshotHandle
 			steamID     [CSteamID!]            ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamScreenshots_TagPublishedFile: "SteamAPI_ISteamScreenshots_TagPublishedFile" [
 			instancePtr       [ISteamScreenshots!];intptr_t
 			hScreenshot       [integer!]       ;ScreenshotHandle
 			unPublishedFileID [uint64! value]  ;PublishedFileId_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamScreenshots_IsScreenshotsHooked: "SteamAPI_ISteamScreenshots_IsScreenshotsHooked" [
 			instancePtr [ISteamScreenshots!]   ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamScreenshots_AddVRScreenshotToLibrary: {SteamAPI_ISteamScreenshots_AddVRScreenshotToLibrary} [
 			instancePtr   [ISteamScreenshots!] ;intptr_t

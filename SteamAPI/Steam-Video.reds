@@ -17,7 +17,7 @@ ISteamVideo: declare ISteamVideo!
 		SteamAPI_ISteamVideo_IsBroadcasting: "SteamAPI_ISteamVideo_IsBroadcasting" [
 			instancePtr  [ISteamVideo!]        ;intptr_t
 			pnNumViewers [int-ptr!]            ;int *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 	]
 ]

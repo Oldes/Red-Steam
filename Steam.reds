@@ -23,6 +23,7 @@ init: func[
 	ISteamFriends:  GetISteamFriends
 	ISteamUser:     GetISteamUser
 	ISteamRemoteStorage: GetISteamRemoteStorage
+	ISteamMusic:    GetISteamMusic
 	true
 ]
 
@@ -45,7 +46,7 @@ list-friends: func[
 ]
 
 file-write: func[file [c-string!] data [byte-ptr!] length [integer!] return: [logic!]][
-	SteamAPI_ISteamRemoteStorage_FileWrite ISteamRemoteStorage file data length
+	as logic! SteamAPI_ISteamRemoteStorage_FileWrite ISteamRemoteStorage file data length
 ]
 file-read: func[
 	file [c-string!]
@@ -69,8 +70,7 @@ file-exists?: func[
 	file [c-string!]
 	return: [logic!]
 ][
-	;@@ steam returns ballast in the higher bits so we must clear them manually!
-	as logic! 01h and as integer! SteamAPI_ISteamRemoteStorage_FileExists ISteamRemoteStorage file
+	as logic! SteamAPI_ISteamRemoteStorage_FileExists ISteamRemoteStorage file
 ]
 file-count: func[return: [integer!]][
 	SteamAPI_ISteamRemoteStorage_GetFileCount ISteamRemoteStorage
@@ -95,27 +95,31 @@ info: func[
 	/local
 		total     [uint64!]
 		available [uint64!]
-		res       [logic!]
+		res       [steam-logic!]
 ][
 	if any [isReady init] [
 		print-line ["Steam running: " SteamAPI_IsSteamRunning]
-		print-line ["User_BLoggedOn: " SteamAPI_ISteamUser_BLoggedOn ISteamUser ]
+		print-line ["User_BLoggedOn: " as logic! SteamAPI_ISteamUser_BLoggedOn ISteamUser ]
 		print-line ["User_GetPlayerSteamLevel: " SteamAPI_ISteamUser_GetPlayerSteamLevel ISteamUser]
 		print-line ["Friends_GetPersonaName: " SteamAPI_ISteamFriends_GetPersonaName ISteamFriends]
 		print-line ["Friends_GetPersonaState: " SteamAPI_ISteamFriends_GetPersonaState ISteamFriends]
-		print-line ["RemoteStorage_IsCloudEnabledForAccount: " SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount ISteamRemoteStorage]
+		print-line ["RemoteStorage_IsCloudEnabledForAccount: " as logic! SteamAPI_ISteamRemoteStorage_IsCloudEnabledForAccount ISteamRemoteStorage]
 
 		total: declare uint64! 0
 		available: declare uint64! 0
 
 		res: SteamAPI_ISteamRemoteStorage_GetQuota ISteamRemoteStorage total available
-		if 0 < (01h and as integer! res) [
+		if as logic! res [
 			print-line ["RemoteStorage_GetQuota total: " total/lo " available: " available/lo]
 		]
 
 		list-friends EFriendFlagAll
 		print-line ["Files on SteamCloud:"]
 		list-files
+
+		print-line ""
+		print-line ["Music_BIsEnabled: " as logic! SteamAPI_ISteamMusic_BIsEnabled ISteamMusic]
+		print-line ["Music_BIsPlaying: " as logic! SteamAPI_ISteamMusic_BIsPlaying ISteamMusic]
 	]
 ]
 

@@ -33,6 +33,7 @@ Steam: context [
 		"Writes data on Steam Cloud"
 		file [file!]
 		data [binary!]
+		return: [logic!]
 		/local
 			c-file [c-string!]
 			len    [integer!]

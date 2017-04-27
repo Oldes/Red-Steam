@@ -102,56 +102,56 @@ ISteamHTTP: declare ISteamHTTP!
 			instancePtr    [ISteamHTTP!]       ;intptr_t
 			hRequest       [integer!]          ;HTTPRequestHandle
 			ulContextValue [uint64! value]     ;uint64
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestNetworkActivityTimeout: {SteamAPI_ISteamHTTP_SetHTTPRequestNetworkActivityTimeout} [
 			instancePtr      [ISteamHTTP!]     ;intptr_t
 			hRequest         [integer!]        ;HTTPRequestHandle
 			unTimeoutSeconds [integer!]        ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestHeaderValue: "SteamAPI_ISteamHTTP_SetHTTPRequestHeaderValue" [
 			instancePtr    [ISteamHTTP!]       ;intptr_t
 			hRequest       [integer!]          ;HTTPRequestHandle
 			pchHeaderName  [c-string!]         ;const char *
 			pchHeaderValue [c-string!]         ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestGetOrPostParameter: {SteamAPI_ISteamHTTP_SetHTTPRequestGetOrPostParameter} [
 			instancePtr   [ISteamHTTP!]        ;intptr_t
 			hRequest      [integer!]           ;HTTPRequestHandle
 			pchParamName  [c-string!]          ;const char *
 			pchParamValue [c-string!]          ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SendHTTPRequest: "SteamAPI_ISteamHTTP_SendHTTPRequest" [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
 			pCallHandle [uint64-ref!]          ;SteamAPICall_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SendHTTPRequestAndStreamResponse: {SteamAPI_ISteamHTTP_SendHTTPRequestAndStreamResponse} [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
 			pCallHandle [uint64-ref!]          ;SteamAPICall_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_DeferHTTPRequest: "SteamAPI_ISteamHTTP_DeferHTTPRequest" [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_PrioritizeHTTPRequest: "SteamAPI_ISteamHTTP_PrioritizeHTTPRequest" [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPResponseHeaderSize: "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderSize" [
 			instancePtr         [ISteamHTTP!]  ;intptr_t
 			hRequest            [integer!]     ;HTTPRequestHandle
 			pchHeaderName       [c-string!]    ;const char *
 			unResponseHeaderSize[int-ptr!]     ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPResponseHeaderValue: "SteamAPI_ISteamHTTP_GetHTTPResponseHeaderValue" [
 			instancePtr        [ISteamHTTP!]   ;intptr_t
@@ -159,20 +159,20 @@ ISteamHTTP: declare ISteamHTTP!
 			pchHeaderName      [c-string!]     ;const char *
 			pHeaderValueBuffer [pointer! [byte!]];uint8 *
 			unBufferSize       [integer!]      ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPResponseBodySize: "SteamAPI_ISteamHTTP_GetHTTPResponseBodySize" [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
 			unBodySize  [int-ptr!]             ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPResponseBodyData: "SteamAPI_ISteamHTTP_GetHTTPResponseBodyData" [
 			instancePtr     [ISteamHTTP!]      ;intptr_t
 			hRequest        [integer!]         ;HTTPRequestHandle
 			pBodyDataBuffer [pointer! [byte!]] ;uint8 *
 			unBufferSize    [integer!]         ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPStreamingResponseBodyData: {SteamAPI_ISteamHTTP_GetHTTPStreamingResponseBodyData} [
 			instancePtr     [ISteamHTTP!]      ;intptr_t
@@ -180,18 +180,18 @@ ISteamHTTP: declare ISteamHTTP!
 			cOffset         [integer!]         ;uint32
 			pBodyDataBuffer [pointer! [byte!]] ;uint8 *
 			unBufferSize    [integer!]         ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_ReleaseHTTPRequest: "SteamAPI_ISteamHTTP_ReleaseHTTPRequest" [
 			instancePtr [ISteamHTTP!]          ;intptr_t
 			hRequest    [integer!]             ;HTTPRequestHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPDownloadProgressPct: "SteamAPI_ISteamHTTP_GetHTTPDownloadProgressPct" [
 			instancePtr   [ISteamHTTP!]        ;intptr_t
 			hRequest      [integer!]           ;HTTPRequestHandle
 			pflPercentOut [pointer! [float32!]];float *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestRawPostBody: "SteamAPI_ISteamHTTP_SetHTTPRequestRawPostBody" [
 			instancePtr    [ISteamHTTP!]       ;intptr_t
@@ -199,7 +199,7 @@ ISteamHTTP: declare ISteamHTTP!
 			pchContentType [c-string!]         ;const char *
 			pubBody        [pointer! [byte!]]  ;uint8 *
 			unBodyLen      [integer!]          ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_CreateCookieContainer: "SteamAPI_ISteamHTTP_CreateCookieContainer" [
 			instancePtr         [ISteamHTTP!]  ;intptr_t
@@ -209,7 +209,7 @@ ISteamHTTP: declare ISteamHTTP!
 		SteamAPI_ISteamHTTP_ReleaseCookieContainer: "SteamAPI_ISteamHTTP_ReleaseCookieContainer" [
 			instancePtr      [ISteamHTTP!]     ;intptr_t
 			hCookieContainer [integer!]        ;HTTPCookieContainerHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetCookie: "SteamAPI_ISteamHTTP_SetCookie" [
 			instancePtr      [ISteamHTTP!]     ;intptr_t
@@ -217,37 +217,37 @@ ISteamHTTP: declare ISteamHTTP!
 			pchHost          [c-string!]       ;const char *
 			pchUrl           [c-string!]       ;const char *
 			pchCookie        [c-string!]       ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestCookieContainer: "SteamAPI_ISteamHTTP_SetHTTPRequestCookieContainer" [
 			instancePtr      [ISteamHTTP!]     ;intptr_t
 			hRequest         [integer!]        ;HTTPRequestHandle
 			hCookieContainer [integer!]        ;HTTPCookieContainerHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestUserAgentInfo: "SteamAPI_ISteamHTTP_SetHTTPRequestUserAgentInfo" [
 			instancePtr      [ISteamHTTP!]     ;intptr_t
 			hRequest         [integer!]        ;HTTPRequestHandle
 			pchUserAgentInfo [c-string!]       ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestRequiresVerifiedCertificate: {SteamAPI_ISteamHTTP_SetHTTPRequestRequiresVerifiedCertificate} [
 			instancePtr         [ISteamHTTP!]  ;intptr_t
 			hRequest            [integer!]     ;HTTPRequestHandle
 			bRequireVerifiedCertificate[logic!];bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_SetHTTPRequestAbsoluteTimeoutMS: {SteamAPI_ISteamHTTP_SetHTTPRequestAbsoluteTimeoutMS} [
 			instancePtr    [ISteamHTTP!]       ;intptr_t
 			hRequest       [integer!]          ;HTTPRequestHandle
 			unMilliseconds [integer!]          ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamHTTP_GetHTTPRequestWasTimedOut: "SteamAPI_ISteamHTTP_GetHTTPRequestWasTimedOut" [
 			instancePtr   [ISteamHTTP!]        ;intptr_t
 			hRequest      [integer!]           ;HTTPRequestHandle
 			pbWasTimedOut [logic-ref!]  ;bool *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 	]
 ]

@@ -77,7 +77,7 @@ ISteamMatchmakingServers: declare ISteamMatchmakingServers!
 		SteamAPI_ISteamMatchmakingServers_IsRefreshing: "SteamAPI_ISteamMatchmakingServers_IsRefreshing" [
 			instancePtr [ISteamMatchmakingServers!];intptr_t
 			hRequest    [byte-ptr!]            ;HServerListRequest
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamMatchmakingServers_GetServerCount: "SteamAPI_ISteamMatchmakingServers_GetServerCount" [
 			instancePtr [ISteamMatchmakingServers!];intptr_t

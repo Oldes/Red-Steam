@@ -17,7 +17,7 @@ ISteamClient: declare ISteamClient!
 		SteamAPI_ISteamClient_BReleaseSteamPipe: "SteamAPI_ISteamClient_BReleaseSteamPipe" [
 			instancePtr [ISteamClient!]        ;intptr_t
 			hSteamPipe  [integer!]             ;HSteamPipe
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamClient_ConnectToGlobalUser: "SteamAPI_ISteamClient_ConnectToGlobalUser" [
 			instancePtr [ISteamClient!]        ;intptr_t
@@ -140,7 +140,7 @@ ISteamClient: declare ISteamClient!
 		]
 		SteamAPI_ISteamClient_BShutdownIfAllPipesClosed: "SteamAPI_ISteamClient_BShutdownIfAllPipesClosed" [
 			instancePtr [ISteamClient!]        ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamClient_GetISteamHTTP: "SteamAPI_ISteamClient_GetISteamHTTP" [
 			instancePtr [ISteamClient!]        ;intptr_t

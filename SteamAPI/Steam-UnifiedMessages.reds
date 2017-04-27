@@ -23,7 +23,7 @@ ISteamUnifiedMessages: declare ISteamUnifiedMessages!
 			hHandle         [uint64! value]    ;ClientUnifiedMessageHandle
 			punResponseSize [int-ptr!]         ;uint32 *
 			peResult        [int-ptr!]         ;EResult *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUnifiedMessages_GetMethodResponseData: {SteamAPI_ISteamUnifiedMessages_GetMethodResponseData} [
 			instancePtr         [ISteamUnifiedMessages!];intptr_t
@@ -31,19 +31,19 @@ ISteamUnifiedMessages: declare ISteamUnifiedMessages!
 			pResponseBuffer     [byte-ptr!]    ;void *
 			unResponseBufferSize[integer!]     ;uint32
 			bAutoRelease        [logic!]       ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUnifiedMessages_ReleaseMethod: "SteamAPI_ISteamUnifiedMessages_ReleaseMethod" [
 			instancePtr [ISteamUnifiedMessages!];intptr_t
 			hHandle     [uint64! value]        ;ClientUnifiedMessageHandle
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUnifiedMessages_SendNotification: "SteamAPI_ISteamUnifiedMessages_SendNotification" [
 			instancePtr         [ISteamUnifiedMessages!];intptr_t
 			pchServiceNotification[c-string!]  ;const char *
 			pNotificationBuffer [byte-ptr!]    ;const void *
 			unNotificationBufferSize[integer!] ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 	]
 ]

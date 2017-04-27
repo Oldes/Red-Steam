@@ -16,7 +16,7 @@ ISteamUser: declare ISteamUser!
 		]
 		SteamAPI_ISteamUser_BLoggedOn: "SteamAPI_ISteamUser_BLoggedOn" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_GetSteamID: "SteamAPI_ISteamUser_GetSteamID" [
 			instancePtr [ISteamUser!]          ;intptr_t
@@ -47,7 +47,7 @@ ISteamUser: declare ISteamUser!
 			instancePtr [ISteamUser!]          ;intptr_t
 			pchBuffer   [c-string!]            ;char *
 			cubBuffer   [integer!]             ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_StartVoiceRecording: "SteamAPI_ISteamUser_StartVoiceRecording" [
 			instancePtr [ISteamUser!]          ;intptr_t
@@ -119,7 +119,7 @@ ISteamUser: declare ISteamUser!
 		]
 		SteamAPI_ISteamUser_BIsBehindNAT: "SteamAPI_ISteamUser_BIsBehindNAT" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_AdvertiseGame: "SteamAPI_ISteamUser_AdvertiseGame" [
 			instancePtr       [ISteamUser!]    ;intptr_t
@@ -138,7 +138,7 @@ ISteamUser: declare ISteamUser!
 			pTicket     [byte-ptr!]            ;void *
 			cbMaxTicket [integer!]             ;int
 			pcbTicket   [int-ptr!]             ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_GetGameBadgeLevel: "SteamAPI_ISteamUser_GetGameBadgeLevel" [
 			instancePtr [ISteamUser!]          ;intptr_t
@@ -157,19 +157,19 @@ ISteamUser: declare ISteamUser!
 		]
 		SteamAPI_ISteamUser_BIsPhoneVerified: "SteamAPI_ISteamUser_BIsPhoneVerified" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_BIsTwoFactorEnabled: "SteamAPI_ISteamUser_BIsTwoFactorEnabled" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_BIsPhoneIdentifying: "SteamAPI_ISteamUser_BIsPhoneIdentifying" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUser_BIsPhoneRequiringVerification: "SteamAPI_ISteamUser_BIsPhoneRequiringVerification" [
 			instancePtr [ISteamUser!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 	]
 ]

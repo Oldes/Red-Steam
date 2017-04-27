@@ -258,11 +258,11 @@ ISteamController: declare ISteamController!
 	STEAM_LIBRARY STEAM_CALL [
 		SteamAPI_ISteamController_Init: "SteamAPI_ISteamController_Init" [
 			instancePtr [ISteamController!]    ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_Shutdown: "SteamAPI_ISteamController_Shutdown" [
 			instancePtr [ISteamController!]    ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_RunFrame: "SteamAPI_ISteamController_RunFrame" [
 			instancePtr [ISteamController!]    ;intptr_t
@@ -275,7 +275,7 @@ ISteamController: declare ISteamController!
 		SteamAPI_ISteamController_ShowBindingPanel: "SteamAPI_ISteamController_ShowBindingPanel" [
 			instancePtr      [ISteamController!];intptr_t
 			controllerHandle [uint64! value]   ;ControllerHandle_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_GetActionSetHandle: "SteamAPI_ISteamController_GetActionSetHandle" [
 			instancePtr      [ISteamController!];intptr_t
@@ -369,7 +369,7 @@ ISteamController: declare ISteamController!
 			flScale             [float32!]     ;float
 			flXPosition         [float32!]     ;float
 			flYPosition         [float32!]     ;float
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_ShowAnalogActionOrigins: "SteamAPI_ISteamController_ShowAnalogActionOrigins" [
 			instancePtr        [ISteamController!];intptr_t
@@ -378,7 +378,7 @@ ISteamController: declare ISteamController!
 			flScale            [float32!]      ;float
 			flXPosition        [float32!]      ;float
 			flYPosition        [float32!]      ;float
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_GetStringForActionOrigin: "SteamAPI_ISteamController_GetStringForActionOrigin" [
 			instancePtr [ISteamController!]    ;intptr_t

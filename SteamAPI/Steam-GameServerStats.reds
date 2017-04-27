@@ -20,35 +20,35 @@ ISteamGameServerStats: declare ISteamGameServerStats!
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
 			pData       [int-ptr!]             ;int32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_GetUserStat0: "SteamAPI_ISteamGameServerStats_GetUserStat0" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
 			pData       [pointer! [float32!]]  ;float *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_GetUserAchievement: "SteamAPI_ISteamGameServerStats_GetUserAchievement" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
 			pbAchieved  [logic-ref!]    ;bool *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_SetUserStat: "SteamAPI_ISteamGameServerStats_SetUserStat" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
 			nData       [integer!]             ;int32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_SetUserStat0: "SteamAPI_ISteamGameServerStats_SetUserStat0" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
 			fData       [float32!]             ;float
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat: {SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat} [
 			instancePtr        [ISteamGameServerStats!];intptr_t
@@ -56,19 +56,19 @@ ISteamGameServerStats: declare ISteamGameServerStats!
 			pchName            [c-string!]     ;const char *
 			flCountThisSession [float32!]      ;float
 			dSessionLength     [float!]        ;double
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_SetUserAchievement: "SteamAPI_ISteamGameServerStats_SetUserAchievement" [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_ClearUserAchievement: {SteamAPI_ISteamGameServerStats_ClearUserAchievement} [
 			instancePtr [ISteamGameServerStats!];intptr_t
 			steamIDUser [CSteamID!]            ;class CSteamID
 			pchName     [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamGameServerStats_StoreUserStats: "SteamAPI_ISteamGameServerStats_StoreUserStats" [
 			instancePtr [ISteamGameServerStats!];intptr_t

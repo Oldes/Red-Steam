@@ -89,13 +89,13 @@ ISteamNetworking: declare ISteamNetworking!
 			cubData       [integer!]           ;uint32
 			eP2PSendType  [EP2PSend!]          ;EP2PSend
 			nChannel      [integer!]           ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_IsP2PPacketAvailable: "SteamAPI_ISteamNetworking_IsP2PPacketAvailable" [
 			instancePtr [ISteamNetworking!]    ;intptr_t
 			pcubMsgSize [int-ptr!]             ;uint32 *
 			nChannel    [integer!]             ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_ReadP2PPacket: "SteamAPI_ISteamNetworking_ReadP2PPacket" [
 			instancePtr    [ISteamNetworking!] ;intptr_t
@@ -104,34 +104,34 @@ ISteamNetworking: declare ISteamNetworking!
 			pcubMsgSize    [int-ptr!]          ;uint32 *
 			psteamIDRemote [CSteamID-ref!]     ;class CSteamID *
 			nChannel       [integer!]          ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_AcceptP2PSessionWithUser: "SteamAPI_ISteamNetworking_AcceptP2PSessionWithUser" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			steamIDRemote [CSteamID!]          ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_CloseP2PSessionWithUser: "SteamAPI_ISteamNetworking_CloseP2PSessionWithUser" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			steamIDRemote [CSteamID!]          ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_CloseP2PChannelWithUser: "SteamAPI_ISteamNetworking_CloseP2PChannelWithUser" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			steamIDRemote [CSteamID!]          ;class CSteamID
 			nChannel      [integer!]           ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_GetP2PSessionState: "SteamAPI_ISteamNetworking_GetP2PSessionState" [
 			instancePtr      [ISteamNetworking!];intptr_t
 			steamIDRemote    [CSteamID!]       ;class CSteamID
 			pConnectionState [int-ptr!]        ;struct P2PSessionState_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_AllowP2PPacketRelay: "SteamAPI_ISteamNetworking_AllowP2PPacketRelay" [
 			instancePtr [ISteamNetworking!]    ;intptr_t
 			bAllow      [logic!]               ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_CreateListenSocket: "SteamAPI_ISteamNetworking_CreateListenSocket" [
 			instancePtr         [ISteamNetworking!];intptr_t
@@ -160,13 +160,13 @@ ISteamNetworking: declare ISteamNetworking!
 			instancePtr      [ISteamNetworking!];intptr_t
 			hSocket          [integer!]        ;SNetSocket_t
 			bNotifyRemoteEnd [logic!]          ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_DestroyListenSocket: "SteamAPI_ISteamNetworking_DestroyListenSocket" [
 			instancePtr      [ISteamNetworking!];intptr_t
 			hSocket          [integer!]        ;SNetListenSocket_t
 			bNotifyRemoteEnd [logic!]          ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_SendDataOnSocket: "SteamAPI_ISteamNetworking_SendDataOnSocket" [
 			instancePtr [ISteamNetworking!]    ;intptr_t
@@ -174,13 +174,13 @@ ISteamNetworking: declare ISteamNetworking!
 			pubData     [byte-ptr!]            ;void *
 			cubData     [integer!]             ;uint32
 			bReliable   [logic!]               ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_IsDataAvailableOnSocket: "SteamAPI_ISteamNetworking_IsDataAvailableOnSocket" [
 			instancePtr [ISteamNetworking!]    ;intptr_t
 			hSocket     [integer!]             ;SNetSocket_t
 			pcubMsgSize [int-ptr!]             ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_RetrieveDataFromSocket: "SteamAPI_ISteamNetworking_RetrieveDataFromSocket" [
 			instancePtr [ISteamNetworking!]    ;intptr_t
@@ -188,14 +188,14 @@ ISteamNetworking: declare ISteamNetworking!
 			pubDest     [byte-ptr!]            ;void *
 			cubDest     [integer!]             ;uint32
 			pcubMsgSize [int-ptr!]             ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_IsDataAvailable: "SteamAPI_ISteamNetworking_IsDataAvailable" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			hListenSocket [integer!]           ;SNetListenSocket_t
 			pcubMsgSize   [int-ptr!]           ;uint32 *
 			phSocket      [int-ptr!]           ;SNetSocket_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_RetrieveData: "SteamAPI_ISteamNetworking_RetrieveData" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
@@ -204,7 +204,7 @@ ISteamNetworking: declare ISteamNetworking!
 			cubDest       [integer!]           ;uint32
 			pcubMsgSize   [int-ptr!]           ;uint32 *
 			phSocket      [int-ptr!]           ;SNetSocket_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_GetSocketInfo: "SteamAPI_ISteamNetworking_GetSocketInfo" [
 			instancePtr    [ISteamNetworking!] ;intptr_t
@@ -213,14 +213,14 @@ ISteamNetworking: declare ISteamNetworking!
 			peSocketStatus [int-ptr!]          ;int *
 			punIPRemote    [int-ptr!]          ;uint32 *
 			punPortRemote  [pointer! [uint16!]];uint16 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_GetListenSocketInfo: "SteamAPI_ISteamNetworking_GetListenSocketInfo" [
 			instancePtr   [ISteamNetworking!]  ;intptr_t
 			hListenSocket [integer!]           ;SNetListenSocket_t
 			pnIP          [int-ptr!]           ;uint32 *
 			pnPort        [pointer! [uint16!]] ;uint16 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamNetworking_GetSocketConnectionType: "SteamAPI_ISteamNetworking_GetSocketConnectionType" [
 			instancePtr [ISteamNetworking!]    ;intptr_t

@@ -12,19 +12,19 @@ ISteamApps: declare ISteamApps!
 	STEAM_LIBRARY STEAM_CALL  [
 		SteamAPI_ISteamApps_BIsSubscribed: "SteamAPI_ISteamApps_BIsSubscribed" [
 			instancePtr [ISteamApps!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_BIsLowViolence: "SteamAPI_ISteamApps_BIsLowViolence" [
 			instancePtr [ISteamApps!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_BIsCybercafe: "SteamAPI_ISteamApps_BIsCybercafe" [
 			instancePtr [ISteamApps!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_BIsVACBanned: "SteamAPI_ISteamApps_BIsVACBanned" [
 			instancePtr [ISteamApps!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetCurrentGameLanguage: "SteamAPI_ISteamApps_GetCurrentGameLanguage" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -37,12 +37,12 @@ ISteamApps: declare ISteamApps!
 		SteamAPI_ISteamApps_BIsSubscribedApp: "SteamAPI_ISteamApps_BIsSubscribedApp" [
 			instancePtr [ISteamApps!]          ;intptr_t
 			appID       [integer!]             ;AppId_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_BIsDlcInstalled: "SteamAPI_ISteamApps_BIsDlcInstalled" [
 			instancePtr [ISteamApps!]          ;intptr_t
 			appID       [integer!]             ;AppId_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetEarliestPurchaseUnixTime: "SteamAPI_ISteamApps_GetEarliestPurchaseUnixTime" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -51,7 +51,7 @@ ISteamApps: declare ISteamApps!
 		]
 		SteamAPI_ISteamApps_BIsSubscribedFromFreeWeekend: "SteamAPI_ISteamApps_BIsSubscribedFromFreeWeekend" [
 			instancePtr [ISteamApps!]          ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetDLCCount: "SteamAPI_ISteamApps_GetDLCCount" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -64,7 +64,7 @@ ISteamApps: declare ISteamApps!
 			pbAvailable       [logic-ref!];bool *
 			pchName           [c-string!]      ;char *
 			cchNameBufferSize [integer!]       ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_InstallDLC: "SteamAPI_ISteamApps_InstallDLC" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -82,12 +82,12 @@ ISteamApps: declare ISteamApps!
 			instancePtr       [ISteamApps!]    ;intptr_t
 			pchName           [c-string!]      ;char *
 			cchNameBufferSize [integer!]       ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_MarkContentCorrupt: "SteamAPI_ISteamApps_MarkContentCorrupt" [
 			instancePtr       [ISteamApps!]    ;intptr_t
 			bMissingFilesOnly [logic!]         ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetInstalledDepots: "SteamAPI_ISteamApps_GetInstalledDepots" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -106,7 +106,7 @@ ISteamApps: declare ISteamApps!
 		SteamAPI_ISteamApps_BIsAppInstalled: "SteamAPI_ISteamApps_BIsAppInstalled" [
 			instancePtr [ISteamApps!]          ;intptr_t
 			appID       [integer!]             ;AppId_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetAppOwner: "SteamAPI_ISteamApps_GetAppOwner" [
 			instancePtr [ISteamApps!]          ;intptr_t
@@ -122,7 +122,7 @@ ISteamApps: declare ISteamApps!
 			nAppID             [integer!]      ;AppId_t
 			punBytesDownloaded [uint64-ref!]   ;uint64 *
 			punBytesTotal      [uint64-ref!]   ;uint64 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamApps_GetAppBuildId: "SteamAPI_ISteamApps_GetAppBuildId" [
 			instancePtr [ISteamApps!]          ;intptr_t

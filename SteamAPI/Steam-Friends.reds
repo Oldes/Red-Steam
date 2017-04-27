@@ -123,7 +123,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDFriend   [CSteamID!]        ;class CSteamID
 			pFriendGameInfo [FriendGameInfo!]  ;struct FriendGameInfo_t *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetFriendPersonaNameHistory: "SteamAPI_ISteamFriends_GetFriendPersonaNameHistory" [
 			instancePtr   [ISteamFriends!]     ;intptr_t
@@ -170,7 +170,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr   [ISteamFriends!]     ;intptr_t
 			steamIDFriend [CSteamID!]          ;class CSteamID
 			iFriendFlags  [integer!]           ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetClanCount: "SteamAPI_ISteamFriends_GetClanCount" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -197,7 +197,7 @@ ISteamFriends: declare ISteamFriends!
 			pnOnline    [int-ptr!]             ;int *
 			pnInGame    [int-ptr!]             ;int *
 			pnChatting  [int-ptr!]             ;int *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_DownloadClanActivityCounts: "SteamAPI_ISteamFriends_DownloadClanActivityCounts" [
 			instancePtr     [ISteamFriends!]   ;intptr_t
@@ -220,7 +220,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr   [ISteamFriends!]     ;intptr_t
 			steamIDUser   [CSteamID!]          ;class CSteamID
 			steamIDSource [CSteamID!]          ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_SetInGameVoiceSpeaking: "SteamAPI_ISteamFriends_SetInGameVoiceSpeaking" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -272,7 +272,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr      [ISteamFriends!]  ;intptr_t
 			steamIDUser      [CSteamID!]       ;class CSteamID
 			bRequireNameOnly [logic!]          ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_RequestClanOfficerList: "SteamAPI_ISteamFriends_RequestClanOfficerList" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -303,7 +303,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr [ISteamFriends!]       ;intptr_t
 			pchKey      [c-string!]            ;const char *
 			pchValue    [c-string!]            ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_ClearRichPresence: "SteamAPI_ISteamFriends_ClearRichPresence" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -333,7 +333,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr      [ISteamFriends!]  ;intptr_t
 			steamIDFriend    [CSteamID!]       ;class CSteamID
 			pchConnectString [c-string!]       ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetCoplayFriendCount: "SteamAPI_ISteamFriends_GetCoplayFriendCount" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -362,7 +362,7 @@ ISteamFriends: declare ISteamFriends!
 		SteamAPI_ISteamFriends_LeaveClanChatRoom: "SteamAPI_ISteamFriends_LeaveClanChatRoom" [
 			instancePtr [ISteamFriends!]       ;intptr_t
 			steamIDClan [CSteamID!]            ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetClanChatMemberCount: "SteamAPI_ISteamFriends_GetClanChatMemberCount" [
 			instancePtr [ISteamFriends!]       ;intptr_t
@@ -379,7 +379,7 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDClanChat [CSteamID!]        ;class CSteamID
 			pchText         [c-string!]        ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetClanChatMessage: "SteamAPI_ISteamFriends_GetClanChatMessage" [
 			instancePtr     [ISteamFriends!]   ;intptr_t
@@ -395,33 +395,33 @@ ISteamFriends: declare ISteamFriends!
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDClanChat [CSteamID!]        ;class CSteamID
 			steamIDUser     [CSteamID!]        ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_IsClanChatWindowOpenInSteam: "SteamAPI_ISteamFriends_IsClanChatWindowOpenInSteam" [
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDClanChat [CSteamID!]        ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_OpenClanChatWindowInSteam: "SteamAPI_ISteamFriends_OpenClanChatWindowInSteam" [
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDClanChat [CSteamID!]        ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_CloseClanChatWindowInSteam: "SteamAPI_ISteamFriends_CloseClanChatWindowInSteam" [
 			instancePtr     [ISteamFriends!]   ;intptr_t
 			steamIDClanChat [CSteamID!]        ;class CSteamID
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_SetListenForFriendsMessages: "SteamAPI_ISteamFriends_SetListenForFriendsMessages" [
 			instancePtr       [ISteamFriends!] ;intptr_t
 			bInterceptEnabled [logic!]         ;bool
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_ReplyToFriendMessage: "SteamAPI_ISteamFriends_ReplyToFriendMessage" [
 			instancePtr   [ISteamFriends!]     ;intptr_t
 			steamIDFriend [CSteamID!]          ;class CSteamID
 			pchMsgToSend  [c-string!]          ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamFriends_GetFriendMessage: "SteamAPI_ISteamFriends_GetFriendMessage" [
 			instancePtr     [ISteamFriends!]   ;intptr_t

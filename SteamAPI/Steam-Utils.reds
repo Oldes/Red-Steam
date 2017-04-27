@@ -58,20 +58,20 @@ ISteamUtils: declare ISteamUtils!
 			iImage      [integer!]             ;int
 			pnWidth     [int-ptr!]             ;uint32 *
 			pnHeight    [int-ptr!]             ;uint32 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetImageRGBA: "SteamAPI_ISteamUtils_GetImageRGBA" [
 			instancePtr     [ISteamUtils!]     ;intptr_t
 			iImage          [integer!]         ;int
 			pubDest         [pointer! [byte!]] ;uint8 *
 			nDestBufferSize [integer!]         ;int
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetCSERIPPort: "SteamAPI_ISteamUtils_GetCSERIPPort" [
 			instancePtr [ISteamUtils!]         ;intptr_t
 			unIP        [int-ptr!]             ;uint32 *
 			usPort      [pointer! [uint16!]]   ;uint16 *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetCurrentBatteryPower: "SteamAPI_ISteamUtils_GetCurrentBatteryPower" [
 			instancePtr [ISteamUtils!]         ;intptr_t
@@ -89,7 +89,7 @@ ISteamUtils: declare ISteamUtils!
 			instancePtr   [ISteamUtils!]       ;intptr_t
 			hSteamAPICall [uint64! value]      ;SteamAPICall_t
 			pbFailed      [logic-ref!]  ;bool *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetAPICallFailureReason: "SteamAPI_ISteamUtils_GetAPICallFailureReason" [
 			instancePtr   [ISteamUtils!]       ;intptr_t
@@ -103,7 +103,7 @@ ISteamUtils: declare ISteamUtils!
 			cubCallback       [integer!]       ;int
 			iCallbackExpected [integer!]       ;int
 			pbFailed          [logic-ref!];bool *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetIPCCallCount: "SteamAPI_ISteamUtils_GetIPCCallCount" [
 			instancePtr [ISteamUtils!]         ;intptr_t
@@ -115,11 +115,11 @@ ISteamUtils: declare ISteamUtils!
 		]
 		SteamAPI_ISteamUtils_IsOverlayEnabled: "SteamAPI_ISteamUtils_IsOverlayEnabled" [
 			instancePtr [ISteamUtils!]         ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_BOverlayNeedsPresent: "SteamAPI_ISteamUtils_BOverlayNeedsPresent" [
 			instancePtr [ISteamUtils!]         ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_CheckFileSignature: "SteamAPI_ISteamUtils_CheckFileSignature" [
 			instancePtr [ISteamUtils!]         ;intptr_t
@@ -133,7 +133,7 @@ ISteamUtils: declare ISteamUtils!
 			pchDescription  [c-string!]        ;const char *
 			unCharMax       [integer!]         ;uint32
 			pchExistingText [c-string!]        ;const char *
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetEnteredGamepadTextLength: "SteamAPI_ISteamUtils_GetEnteredGamepadTextLength" [
 			instancePtr [ISteamUtils!]         ;intptr_t
@@ -143,7 +143,7 @@ ISteamUtils: declare ISteamUtils!
 			instancePtr [ISteamUtils!]         ;intptr_t
 			pchText     [c-string!]            ;char *
 			cchText     [integer!]             ;uint32
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_GetSteamUILanguage: "SteamAPI_ISteamUtils_GetSteamUILanguage" [
 			instancePtr [ISteamUtils!]         ;intptr_t
@@ -151,7 +151,7 @@ ISteamUtils: declare ISteamUtils!
 		]
 		SteamAPI_ISteamUtils_IsSteamRunningInVR: "SteamAPI_ISteamUtils_IsSteamRunningInVR" [
 			instancePtr [ISteamUtils!]         ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_SetOverlayNotificationInset: "SteamAPI_ISteamUtils_SetOverlayNotificationInset" [
 			instancePtr      [ISteamUtils!]    ;intptr_t
@@ -160,7 +160,7 @@ ISteamUtils: declare ISteamUtils!
 		]
 		SteamAPI_ISteamUtils_IsSteamInBigPictureMode: "SteamAPI_ISteamUtils_IsSteamInBigPictureMode" [
 			instancePtr [ISteamUtils!]         ;intptr_t
-			return: [logic!]
+			return: [steam-logic!]
 		]
 		SteamAPI_ISteamUtils_StartVRDashboard: "SteamAPI_ISteamUtils_StartVRDashboard" [
 			instancePtr [ISteamUtils!]         ;intptr_t
