@@ -21,8 +21,9 @@ Steam: context [
 	][
 		Steam/init
 	]
-	info: routine ["Prints some SteamAPI related info"][
+	info: routine ["Prints some SteamAPI related info" return: [unset!]][
 		Steam/info
+		unset/push-last
 	]
 	shutdown: routine ["Should be called during process shutdown if possible"][
 		Steam/SteamAPI_Shutdown
