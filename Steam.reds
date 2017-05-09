@@ -25,6 +25,7 @@ init: func[
 	ISteamRemoteStorage: GetISteamRemoteStorage
 	ISteamMusic:     GetISteamMusic
 	ISteamUserStats: GetISteamUserStats
+	ISteamController: GetISteamController
 
 	SteamAPI_ISteamUserStats_RequestCurrentStats ISteamUserStats
 	true
@@ -109,6 +110,30 @@ list-achievements: func[
 	]
 ]
 
+ConnectedControllers: as int-ptr! allocate (16 * STEAM_CONTROLLER_MAX_COUNT)
+ConnectedControllersCount: 0
+
+get-controllers: func[
+	/local
+		num [integer!]
+		handles [int-ptr!]
+		handle [uint64-ref!]
+
+][
+	ConnectedControllersCount: SteamAPI_ISteamController_GetConnectedControllers ISteamController ConnectedControllers
+	num:     ConnectedControllersCount
+	handles: ConnectedControllers
+	print-line ["GetConnectedControllers: " num]
+	if all [num >=  0 num <= STEAM_CONTROLLER_MAX_COUNT][
+		while [num > 0] [
+			num: num - 1
+			handle: as uint64-ref! handles
+			print-line [(ConnectedControllersCount - num) #"^-" as int-ptr! handle/hi #"-" as int-ptr! handle/lo ]
+			handles: handles + 2
+		]
+	]
+]
+
 
 info: func[
 	/local
@@ -148,5 +173,11 @@ info: func[
 		print-line ["UserStats_SetAchievement (ACH_TRAVEL_FAR_SINGLE): " as logic! SteamAPI_ISteamUserStats_SetAchievement ISteamUserStats "ACH_TRAVEL_FAR_SINGLE"]
 		print-line "Game achievements:"
 		list-achievements
+
+		print-line ""
+		print-line ["Controller_Init: " as logic! SteamAPI_ISteamController_Init ISteamController]
+		SteamAPI_ISteamController_RunFrame ISteamController
+
+		get-controllers
 	]
 ]

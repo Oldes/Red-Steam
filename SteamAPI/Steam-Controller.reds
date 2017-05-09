@@ -8,6 +8,11 @@ Red/System [
 
 ISteamController: declare ISteamController!
 
+#define STEAM_CONTROLLER_MAX_COUNT 16
+#define STEAM_CONTROLLER_MAX_ANALOG_ACTIONS 16
+#define STEAM_CONTROLLER_MAX_DIGITAL_ACTIONS 128
+#define STEAM_CONTROLLER_MAX_ORIGINS 8
+
 #enum ESteamControllerPad! [
 	k_ESteamControllerPad_Left
 	k_ESteamControllerPad_Right
@@ -256,6 +261,7 @@ ISteamController: declare ISteamController!
 
 #import [
 	STEAM_LIBRARY STEAM_CALL [
+		;Init and Shutdown must be called when starting/ending use of this interface
 		SteamAPI_ISteamController_Init: "SteamAPI_ISteamController_Init" [
 			instancePtr [ISteamController!]    ;intptr_t
 			return: [steam-logic!]
@@ -265,19 +271,28 @@ ISteamController: declare ISteamController!
 			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_RunFrame: "SteamAPI_ISteamController_RunFrame" [
+		;Synchronize API state with the latest Steam Controller inputs available. This
+		;is performed automatically by SteamAPI_RunCallbacks, but for the absolute lowest
+		;possible latency, you call this directly before reading controller state.
 			instancePtr [ISteamController!]    ;intptr_t
 		]
 		SteamAPI_ISteamController_GetConnectedControllers: "SteamAPI_ISteamController_GetConnectedControllers" [
+		;Enumerate currently connected controllers
+		;handlesOut should point to a STEAM_CONTROLLER_MAX_COUNT sized array of ControllerHandle_t handles
+		;Returns the number of handles written to handlesOut
 			instancePtr [ISteamController!]    ;intptr_t
-			handlesOut  [uint64-ref!]          ;ControllerHandle_t *
+			handlesOut  [int-ptr!]             ;ControllerHandle_t *
 			return: [integer!]
 		]
 		SteamAPI_ISteamController_ShowBindingPanel: "SteamAPI_ISteamController_ShowBindingPanel" [
+		;Invokes the Steam overlay and brings up the binding screen
+		;Returns false is overlay is disabled / unavailable, or the user is not in Big Picture mode
 			instancePtr      [ISteamController!];intptr_t
 			controllerHandle [uint64! value]   ;ControllerHandle_t
 			return: [steam-logic!]
 		]
 		SteamAPI_ISteamController_GetActionSetHandle: "SteamAPI_ISteamController_GetActionSetHandle" [
+		;Lookup the handle for an Action Set. Best to do this once on startup, and store the handles for all future API calls.
 			instancePtr      [ISteamController!];intptr_t
 			pszActionSetName [c-string!]       ;const char *
 			return: [uint64! value]
